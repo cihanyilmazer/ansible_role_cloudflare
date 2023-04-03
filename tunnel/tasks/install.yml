@@ -1,0 +1,8 @@
+---
+- name: Download cloudflared linux package
+  shell: wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+- name: Depackage cloudflared
+  shell: sudo dpkg -i cloudflared-linux-amd64.deb
+- name: Install the tunnel as a systemd service
+  shell: cloudflared service install {{ cloudflare_tunnel_token }}
+  ignore_errors: yes
