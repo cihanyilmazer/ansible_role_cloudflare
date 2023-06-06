@@ -32,6 +32,15 @@ ansible-galaxy install cihanyilmazer.ansible_role_cloudflare
       roles:
          - cihanyilmazer.ansible_role_cloudflare/tunnel
 
+Run with Custom Tags (at least one tag must be provided)
+- cloudflare
+- cloudflare-install
+- cloudflare-tunnel
+
+```
+ansible-playbook -i hosts playbook.yml --tags initial --limit servers
+```
+
 License
 -------
 

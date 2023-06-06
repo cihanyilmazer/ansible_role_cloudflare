@@ -1,2 +1,7 @@
 ---
 - import_tasks: install.yml
+  tags:
+    - cloudflare
+    - cloudflare-install
+    - cloudflare-tunnel
+    - never
