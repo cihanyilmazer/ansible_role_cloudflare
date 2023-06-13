@@ -11,4 +11,4 @@
     - name: Install the tunnel as a systemd service
       shell: cloudflared service install {{ cloudflare_tunnel_token }}
   when:
-    - 'cloudflared.service' in ansible_facts.services
+    - ansible_facts.services['cloudflared.service'] is not defined
