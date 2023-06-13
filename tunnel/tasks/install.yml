@@ -11,4 +11,4 @@
     - name: Install the tunnel as a systemd service
       shell: cloudflared service install {{ cloudflare_tunnel_token }}
   when:
-    - ansible_facts.services['cloudflared.service'].state == 'running'
+    - ansible_facts.services['cloudflared.service'].state != 'running'
